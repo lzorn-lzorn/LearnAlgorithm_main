@@ -8,4 +8,5 @@ target_link_libraries(LearnAlgorithm_main
     PRIVATE
         algorithm
         test
+
 )
