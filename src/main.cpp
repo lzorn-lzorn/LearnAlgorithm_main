@@ -1,13 +1,17 @@
 //
 // Created by 75742 on 2023/9/22.
 //
-#include "algorithm/algorithm-test.h"
-#include "test/test.h"
+#include "HeapSort/HeapSort.h"
 
-#include <vector>
 int main(){
-    algorithm_test();
-    std::cout << std::endl;
-    structure_test();
+    std::vector<int> vec{ 0, 2, 9, 7, 4, 1, 8, 3, 6, 5};
+    ltd::priority_queue<int> heap(vec.begin(),vec.end());
+    heap.print();
+    heap.heap_sort();
+    heap.print();
+    heap.pop();
+    heap.print();
+    heap.push(11);
+    heap.print();
     return 0;
 }

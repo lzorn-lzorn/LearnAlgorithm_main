@@ -1,0 +1,8 @@
+//
+// Created by 75742 on 2023/9/25.
+//
+
+#ifndef LEARNALGORITHM_MAIN_EXAMPLE_H
+#define LEARNALGORITHM_MAIN_EXAMPLE_H
+void example();
+#endif //LEARNALGORITHM_MAIN_EXAMPLE_H
