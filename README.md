@@ -3,9 +3,37 @@
 ## 使用语言
 本仓库使用C/C++语言来进行算法的测试，并使用cmake来构建项目。但您无需关注cmake的具体细节，只需要按照我们约定好的格式来书写和提交代码. C++的版本请使用C++17及以上版本
 ## 目录结构
-目录分为 include 和 src 来分别存放您所写的算法或者数据结构的头文件（.h）以及源文件（.c/.cpp）文件。src中将存放对应的算法或数据结构的文件，请妥善安置他们
-在test文件中存放您的测试文件
-最终的测试将在最外层的mian.cpp中进行
+该项目将所有的算法统一视为第三方库，所以在进行编写的时候，创建一个文件夹名，在这个文件下按照给出的例子，写好CMakeLists.txt 并在外部的 CMakeLists.txt 中添加 你自己的库，这样就可以在main中进行测试。
+后续会考虑加入专门的test文件，到时候的具体方法会在之后更新。
+
+如果你已经掌握Cmake，请忽略一下例子
+
+例如: 当你创建了 AAA 文件，里面是 你写的任何东西，请在文件夹下创建CMakeList.txt，并写
+```cmake
+add_library(AAA "")
+
+target_sources(AAA # 
+        PRIVATE
+        AAA.cpp # 
+        PUBLIC
+        ${CMAKE_CURRENT_LIST_DIR}/AAA.h #
+)
+
+target_include_directories(AAA # 
+        PUBLIC
+        ${CMAKE_CURRENT_LIST_DIR}
+)
+```
+
+并且在src/CMakeList.txt中添加你的内容
+```cmake
+add_subdirectory(AAA)
+
+target_link_libraries(LearnAlgorithm_main
+    PRIVATE
+        AAA
+)
+```
 ### 关于头文件和源文件
 在头文件也就是.h文件中，以注释的形式注明函数签名，即参数的含义已经返回值的含义
 对于.cpp文件 请将您想练习的算法写入对应的文件夹中，对于每一个算法或者数据结构都要以md为格式给出详细的文档，也即您对这个算法和数据结构的理解以及您的参考资料。作为学习资料请尽可能全面和准确
