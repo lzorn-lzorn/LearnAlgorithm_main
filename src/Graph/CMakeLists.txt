@@ -2,9 +2,10 @@ add_library(Graph "")
 
 target_sources(Graph # ##
         PRIVATE
-        HeapSort.cpp # ##
+        graph_structure.hpp
+        # ##
         PUBLIC
-        ${CMAKE_CURRENT_LIST_DIR}/matrix.h # ##
+        ${CMAKE_CURRENT_LIST_DIR}/matrix.hpp # ##
 )
 
 target_include_directories(Graph # ##
