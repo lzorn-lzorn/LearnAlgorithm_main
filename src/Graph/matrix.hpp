@@ -92,8 +92,8 @@ namespace ltd{
         matrix<Type, X, Z>& operator*=(const matrix<Type, X, Z>& m) noexcept;
         template<int Z>
         friend matrix<Type, X, Z>& operator*(const matrix<Type, X, X>& m1, const matrix<Type, X, Z>& m2) noexcept;
-        friend matrix<Type, X, X>& operator+(const matrix<Type, X, X>& m1, const matrix<Type, X, Y>& m2) noexcept;
-        friend matrix<Type, X, X>& operator-(const matrix<Type, X, X>& m1, const matrix<Type, X, Y>& m2) noexcept;
+        friend matrix<Type, X, X>& operator+(const matrix<Type, X, X>& m1, const matrix<Type, X, X>& m2) noexcept;
+        friend matrix<Type, X, X>& operator-(const matrix<Type, X, X>& m1, const matrix<Type, X, X>& m2) noexcept;
 
     };
 
