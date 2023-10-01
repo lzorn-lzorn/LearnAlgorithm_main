@@ -9,5 +9,6 @@ namespace ltd{
     struct vertex{};
     template <typename Type>
     struct edge{};
+
 }
 #endif //LEARNALGORITHM_MAIN_GRAPH_STRUCTURE_H
